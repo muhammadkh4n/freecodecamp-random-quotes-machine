@@ -4,7 +4,7 @@ $(document).ready(function () {
     cache: false
   });
 
-  var quotesApi = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1"
+  var quotesApi = "https://crossorigin.me/http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1"
   var quoteBox = $('.quote .quote-content');
   var html = quoteBox.html();
   var spinner = "<p class='spinner'><img src='http://www.securenet.com/sites/default/files/spinner.gif' alt='Loading'></p>";
