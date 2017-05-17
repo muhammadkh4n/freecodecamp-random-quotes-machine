@@ -4,7 +4,7 @@ $(document).ready(function () {
     cache: false,
     headers: {
       'Accept': 'application/json',
-      'Origin': ''
+      'Origin': 'https://muhammadkh4n.github.io/freecodecamp-random-quotes-machine/'
     }
   });
 
