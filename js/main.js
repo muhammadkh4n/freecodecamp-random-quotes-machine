@@ -2,10 +2,12 @@ $(document).ready(function () {
 
   $.ajaxSetup({
     cache: false,
-    dataType: "jsonp"
+    headers: {
+      'Accept': 'application/json'
+    }
   });
 
-  var quotesApi = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
+  var quotesApi = "https://crossorigin.me/http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en";
   var quoteBox = $('.quote .quote-content');
   var html = quoteBox.html();
   var spinner = "<p class='spinner'><img src='img/spin.gif' alt='Loading'></p>";
@@ -23,12 +25,13 @@ $(document).ready(function () {
     loadSpinner(quoteBox);
     $.getJSON(quotesApi)
       .done(function (data) {
-        setHtml(data[0].title, data[0].content, data[0].link);
+        console.log(data);
+        setHtml(data.quoteAuthor, data.quoteText);
       });
   }
 
   // set html with provided data in place.
-  function setHtml(author, quote, link) {
+  function setHtml(author, quote) {
     var quoteHtml = html;
     quoteHtml = replaceText('author', quoteHtml, author);
     quoteHtml = replaceText('quote', quoteHtml, quote);
@@ -37,7 +40,6 @@ $(document).ready(function () {
 
     var newTweet = tweet;
     newTweet += encodeURIComponent(author + " said: \"" + quote.replace(/<p>|<\/p>|\n/g, "") + "\"");
-    newTweet += "&url=" + encodeURIComponent(link);
     setTweet($("#tweet"), newTweet);
 
     actions('block');
