@@ -22,8 +22,7 @@ $(document).ready(function () {
   // get quote data from json api.
   function getData() {
     loadSpinner(quoteBox);
-    $.getJSON(quotesApi)
-      .done(function (data) {
+    $.getJSON(quotesApi, function (data) {
         console.log(data);
         setHtml(data.quoteAuthor, data.quoteText);
       });
