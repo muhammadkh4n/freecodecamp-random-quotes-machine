@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
   $.ajaxSetup({
-    cache: false,
     headers: {
       'Accept': 'application/json'
     }
