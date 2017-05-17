@@ -3,7 +3,8 @@ $(document).ready(function () {
   $.ajaxSetup({
     cache: false,
     headers: {
-      'Accept': 'application/json'
+      'Accept': 'application/json',
+      'Origin': ''
     }
   });
 
