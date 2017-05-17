@@ -21,11 +21,11 @@ $(document).ready(function () {
 
   // get quote data from json api.
   function getData() {
-    loadSpinner(quoteBox);
     $.getJSON(quotesApi, function (data) {
         console.log(data);
         setHtml(data.quoteAuthor, data.quoteText);
       });
+    loadSpinner(quoteBox);
   }
 
   // set html with provided data in place.
