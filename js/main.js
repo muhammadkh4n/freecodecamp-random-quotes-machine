@@ -6,7 +6,7 @@ $(document).ready(function () {
     }
   });
 
-  var quotesApi = "https://crossorigin.me/http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en";
+  var quotesApi = "https://cors-anywhere.herokuapp.com/http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en";
   var quoteBox = $('.quote .quote-content');
   var html = quoteBox.html();
   var spinner = "<p class='spinner'><img src='img/spin.gif' alt='Loading'></p>";
