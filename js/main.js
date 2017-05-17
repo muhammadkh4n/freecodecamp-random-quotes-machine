@@ -1,18 +1,19 @@
 $(document).ready(function () {
 
   $.ajaxSetup({
-    cache: false
+    cache: false,
+    dataType: "jsonp"
   });
 
-  var quotesApi = "https://crossorigin.me/http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1"
+  var quotesApi = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
   var quoteBox = $('.quote .quote-content');
   var html = quoteBox.html();
-  var spinner = "<p class='spinner'><img src='http://www.securenet.com/sites/default/files/spinner.gif' alt='Loading'></p>";
+  var spinner = "<p class='spinner'><img src='img/spin.gif' alt='Loading'></p>";
   var tweet = "https://twitter.com/intent/tweet?text=";
 
   // replace text in the supplied html using the specified attr(strin) with a value.
   function replaceText(attr, html, value) {
-    var replace = "{{" + attr + "}}"
+    var replace = "{{" + attr + "}}";
     html = html.replace(new RegExp(replace, 'g'), value);
     return html;
   }
@@ -86,7 +87,7 @@ $(document).ready(function () {
     if (avg < 170) {
       colors.text = "#fff";
     } else {
-      colors.text = "#000"
+      colors.text = "#000";
     }
 
     return colors;
