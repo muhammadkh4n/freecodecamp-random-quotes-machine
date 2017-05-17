@@ -3,8 +3,7 @@ $(document).ready(function () {
   $.ajaxSetup({
     cache: false,
     headers: {
-      'Accept': 'application/json',
-      'Origin': 'https://muhammadkh4n.github.io/freecodecamp-random-quotes-machine/'
+      'Accept': 'application/json'
     }
   });
 
